@@ -1,14 +1,21 @@
 'use client'
 
 import Link from 'next/link'
-import { Dumbbell } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import { Dumbbell, User, LogOut } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 
 export default function Navbar() {
   const pathname = usePathname()
+  const router = useRouter()
 
   const isActive = (path: string) => {
     return pathname === path ? 'text-purple-600' : 'text-gray-600 hover:text-purple-600'
+  }
+
+  const handleLogout = () => {
+    localStorage.removeItem('currentUser')
+    router.push('/auth')
   }
 
   return (
@@ -30,8 +37,11 @@ export default function Navbar() {
               Mis Reservas
             </Link>
             <Link href="/perfil" className={`${isActive('/perfil')} transition-colors duration-200 text-sm font-medium`}>
-              Perfil
+              <User className="h-5 w-5" />
             </Link>
+            <button onClick={handleLogout} className="text-gray-600 hover:text-purple-600 transition-colors duration-200 text-sm font-medium">
+              <LogOut className="h-5 w-5" />
+            </button>
           </div>
         </div>
       </div>
