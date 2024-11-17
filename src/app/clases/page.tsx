@@ -23,7 +23,7 @@ const classes: Class[] = [
     instructor: "Ana García",
     duration: "60 min",
     capacity: 15,
-    image: "/placeholder.svg?height=400&width=600"
+    image: "/images/yoga.png"
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const classes: Class[] = [
     instructor: "Carlos Ruiz",
     duration: "45 min",
     capacity: 12,
-    image: "/placeholder.svg?height=400&width=600"
+    image: "/images/entrenamiento-funcional.png"
   },
   {
     id: 3,
@@ -41,7 +41,7 @@ const classes: Class[] = [
     instructor: "María López",
     duration: "50 min",
     capacity: 10,
-    image: "/placeholder.svg?height=400&width=600"
+    image: "/images/pilates.png"
   },
   {
     id: 4,
@@ -50,7 +50,7 @@ const classes: Class[] = [
     instructor: "Pedro Martínez",
     duration: "45 min",
     capacity: 20,
-    image: "/placeholder.svg?height=400&width=600"
+    image: "/images/spinning.png"
   }
 ]
 

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { ArrowLeft, Clock, Users, CalendarIcon } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useParams } from 'next/navigation'
 
 interface ClassDetails {
   id: number
@@ -17,28 +18,99 @@ interface ClassDetails {
   benefits: string[]
 }
 
-const classDetails: ClassDetails = {
-  id: 1,
-  name: "Yoga Matutino",
-  description: "Comienza tu día con energía y flexibilidad. Una clase diseñada para todos los niveles que te ayudará a mejorar tu flexibilidad, fuerza y equilibrio.",
-  instructor: "Ana García",
-  duration: "60 min",
-  capacity: 15,
-  image: "/placeholder.svg?height=600&width=800",
-  schedule: [
-    "Lunes - 7:00 AM",
-    "Miércoles - 7:00 AM",
-    "Viernes - 7:00 AM"
-  ],
-  benefits: [
-    "Mejora la flexibilidad",
-    "Reduce el estrés",
-    "Fortalece los músculos",
-    "Mejora la postura"
+const getClassDetails = (id: string): ClassDetails => {
+  const allClasses = [
+    {
+      id: 1,
+      name: "Yoga Matutino",
+      description: "Comienza tu día con energía y flexibilidad. Una clase diseñada para todos los niveles que te ayudará a mejorar tu flexibilidad, fuerza y equilibrio.",
+      instructor: "Ana García",
+      duration: "60 min",
+      capacity: 15,
+      image: "/images/yoga.png",
+      schedule: [
+        "Lunes - 7:00 AM",
+        "Miércoles - 7:00 AM",
+        "Viernes - 7:00 AM"
+      ],
+      benefits: [
+        "Mejora la flexibilidad",
+        "Reduce el estrés",
+        "Fortalece los músculos",
+        "Mejora la postura"
+      ]
+    },
+    {
+      id: 2,
+      name: "Entrenamiento Funcional",
+      description: "Mejora tu condición física con ejercicios dinámicos",
+      instructor: "Carlos Ruiz",
+      duration: "45 min",
+      capacity: 12,
+      image: "/images/entrenamiento-funcional.png",
+      schedule: [
+        "Lunes - 7:00 AM",
+        "Miércoles - 7:00 AM",
+        "Viernes - 7:00 AM"
+      ],
+      benefits: [
+        "Mejora la funcionalidad diaria",
+        "Aumento del equilibro",
+        "Reduccion de lesiones",
+        "Versatilidad y personalizacion"
+      ]
+    },
+    {
+      id: 3,
+      name: "Pilates",
+      description: "Fortalece tu core y mejora tu postura",
+      instructor: "María López",
+      duration: "50 min",
+      capacity: 10,
+      image: "/images/pilates.png",
+      schedule: [
+        "Lunes - 7:00 AM",
+        "Miércoles - 7:00 AM",
+        "Viernes - 7:00 AM"
+      ],
+      benefits: [
+        "Fortalecimiento del core",
+        "Incremento de flexibilidad",
+        "Alivio del estres",
+        "Mejora de postura"
+      ]
+    },
+    {
+      id: 4,
+      name: "Spinning",
+      description: "Cardio intenso con música motivadora",
+      instructor: "Pedro Martínez",
+      duration: "45 min",
+      capacity: 20,
+      image: "/images/spinning.png",
+      schedule: [
+        "Lunes - 7:00 AM",
+        "Miércoles - 7:00 AM",
+        "Viernes - 7:00 AM"
+      ],
+      benefits: [
+        "Quema de calorias",
+        "Fortalecimiento muscular",
+        "Mejora resistencia cardiovascular",
+        "Bajo impacto para las articulaciones"
+      ]
+    },
+    
+
+    // Agrega aquí los detalles de las otras clases (Entrenamiento Funcional, Pilates, Spinning)
   ]
+  
+  return allClasses.find(c => c.id === parseInt(id)) || allClasses[0]
 }
 
 export default function ClassDetailsPage() {
+  const params = useParams()
+  const classDetails = getClassDetails(params.id as string)
   const [selectedDate, setSelectedDate] = useState('')
   const [isReserved, setIsReserved] = useState(false)
 

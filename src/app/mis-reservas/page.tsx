@@ -18,7 +18,6 @@ export default function MisReservasPage() {
   const [reservations, setReservations] = useState<Reservation[]>([])
 
   useEffect(() => {
-    // Cargar reservas del localStorage
     const savedReservations = localStorage.getItem('gymfit_reservations')
     if (savedReservations) {
       setReservations(JSON.parse(savedReservations))

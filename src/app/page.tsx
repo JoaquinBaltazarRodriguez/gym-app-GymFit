@@ -89,7 +89,7 @@ export default function Component() {
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                 <div className="relative h-48">
                   <Image
-                    src="/placeholder.svg?height=400&width=600"
+                    src="/images/yoga.png"
                     alt="Yoga class"
                     layout="fill"
                     objectFit="cover"
@@ -101,9 +101,6 @@ export default function Component() {
                   <p className="text-gray-600 mb-4">Comienza tu día con energía y flexibilidad.</p>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-purple-600 font-medium">Cupos disponibles: 8</span>
-                    <button className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
-                      Reservar
-                    </button>
                   </div>
                 </div>
               </div>
@@ -112,7 +109,7 @@ export default function Component() {
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                 <div className="relative h-48">
                   <Image
-                    src="/placeholder.svg?height=400&width=600"
+                    src="/images/entrenamiento-funcional.png"
                     alt="Fitness class"
                     layout="fill"
                     objectFit="cover"
@@ -124,9 +121,6 @@ export default function Component() {
                   <p className="text-gray-600 mb-4">Mejora tu condición física con ejercicios dinámicos.</p>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-purple-600 font-medium">Cupos disponibles: 5</span>
-                    <button className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
-                      Reservar
-                    </button>
                   </div>
                 </div>
               </div>
@@ -135,7 +129,7 @@ export default function Component() {
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                 <div className="relative h-48">
                   <Image
-                    src="/placeholder.svg?height=400&width=600"
+                    src="/images/pilates.png"
                     alt="Pilates class"
                     layout="fill"
                     objectFit="cover"
@@ -147,9 +141,6 @@ export default function Component() {
                   <p className="text-gray-600 mb-4">Fortalece tu core y mejora tu postura.</p>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-purple-600 font-medium">Cupos disponibles: 10</span>
-                    <button className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
-                      Reservar
-                    </button>
                   </div>
                 </div>
               </div>
